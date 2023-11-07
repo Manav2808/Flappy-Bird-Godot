@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn4r81v144oms"]
+
+[ext_resource type="Script" path="res://Scripts/pipes.gd" id="1_5d017"]
+[ext_resource type="Texture2D" uid="uid://3uq7mmidpt1k" path="res://Assets/sprites/pipe-green.png" id="1_qe6g2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlyvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe8u0"]
+size = Vector2(44, 295.385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcvbu"]
+size = Vector2(48, 22.3076)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwcsr"]
+size = Vector2(28, 130)
+
+[node name="PipesGreen" type="Node2D"]
+script = ExtResource("1_5d017")
+
+[node name="TopPipe" type="StaticBody2D" parent="."]
+
+[node name="UselessCollisionShape" type="CollisionShape2D" parent="TopPipe"]
+shape = SubResource("CircleShape2D_wlyvb")
+disabled = true
+
+[node name="TopPipeSprite" type="Sprite2D" parent="TopPipe"]
+position = Vector2(172, 84)
+rotation = 3.14159
+scale = Vector2(1, 1.3)
+texture = ExtResource("1_qe6g2")
+
+[node name="BirdKillArea" type="Area2D" parent="TopPipe"]
+
+[node name="TopPipeLong" type="CollisionShape2D" parent="TopPipe/BirdKillArea"]
+position = Vector2(172, 69)
+rotation = 3.14159
+scale = Vector2(1, 1.3)
+shape = SubResource("RectangleShape2D_pe8u0")
+
+[node name="BirdKillArea2" type="Area2D" parent="TopPipe"]
+
+[node name="TopPipeShort" type="CollisionShape2D" parent="TopPipe/BirdKillArea2"]
+position = Vector2(172, 275.5)
+rotation = 3.14159
+scale = Vector2(1, 1.3)
+shape = SubResource("RectangleShape2D_mcvbu")
+
+[node name="BottomPipe" type="StaticBody2D" parent="."]
+position = Vector2(344, 744)
+rotation = 3.14159
+
+[node name="UselessCollisionShape" type="CollisionShape2D" parent="BottomPipe"]
+shape = SubResource("CircleShape2D_wlyvb")
+disabled = true
+
+[node name="BottomPipeSprite" type="Sprite2D" parent="BottomPipe"]
+position = Vector2(172, 84)
+rotation = 3.14159
+scale = Vector2(1, 1.3)
+texture = ExtResource("1_qe6g2")
+
+[node name="BirdKillArea" type="Area2D" parent="BottomPipe"]
+
+[node name="BottomPipeLong" type="CollisionShape2D" parent="BottomPipe/BirdKillArea"]
+position = Vector2(172, 69)
+rotation = 3.14159
+scale = Vector2(1, 1.3)
+shape = SubResource("RectangleShape2D_pe8u0")
+
+[node name="BirdKillArea2" type="Area2D" parent="BottomPipe"]
+
+[node name="BottomPipeShort" type="CollisionShape2D" parent="BottomPipe/BirdKillArea2"]
+position = Vector2(172, 275.5)
+rotation = 3.14159
+scale = Vector2(1, 1.3)
+shape = SubResource("RectangleShape2D_mcvbu")
+
+[node name="BirdDetectionArea" type="Area2D" parent="."]
+position = Vector2(240, 408)
+
+[node name="DetectionShape" type="CollisionShape2D" parent="BirdDetectionArea"]
+position = Vector2(-69, -37)
+shape = SubResource("RectangleShape2D_rwcsr")

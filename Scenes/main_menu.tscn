@@ -1,0 +1,197 @@
+[gd_scene load_steps=18 format=3 uid="uid://ewikgv2se4bw"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0nrv3"]
+[ext_resource type="Texture2D" uid="uid://cljfdgsn38xxc" path="res://Assets/sprites/background-day.png" id="1_mwuq2"]
+[ext_resource type="Texture2D" uid="uid://dvkxywhb2kivt" path="res://Assets/sprites/bluebird-midflap.png" id="2_ae7og"]
+[ext_resource type="Texture2D" uid="uid://3uq7mmidpt1k" path="res://Assets/sprites/pipe-green.png" id="3_7agx0"]
+[ext_resource type="Texture2D" uid="uid://bvgv5q5gv1hfw" path="res://Assets/sprites/base.png" id="4_sjip8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmxg7"]
+bg_color = Color(1, 1, 1, 0.627451)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.603922, 0.603922, 0.603922, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ex6u"]
+bg_color = Color(1, 1, 1, 0.588235)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67kfu"]
+bg_color = Color(0, 0.603922, 0.215686, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.415686, 0.415686, 0.415686, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b7aj"]
+bg_color = Color(0, 0.52549, 0.215686, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w40om"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buc06"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxume"]
+bg_color = Color(0.211765, 0.411765, 0.980392, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.415686, 0.415686, 0.415686, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3kdn"]
+bg_color = Color(0.211765, 0.333333, 0.980392, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfks6"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpucb"]
+bg_color = Color(0.886275, 0.0156863, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.415686, 0.415686, 0.415686, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew58m"]
+bg_color = Color(0.807843, 0.0156863, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbls5"]
+draw_center = false
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_0nrv3")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(202, 359)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_mwuq2")
+
+[node name="Bird" type="Sprite2D" parent="."]
+position = Vector2(145, 304)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ae7og")
+
+[node name="Pipe1" type="Sprite2D" parent="."]
+position = Vector2(72, 64)
+rotation = 3.14159
+texture = ExtResource("3_7agx0")
+flip_h = true
+
+[node name="Pipe2" type="Sprite2D" parent="."]
+position = Vector2(72, 544)
+texture = ExtResource("3_7agx0")
+
+[node name="Pipe3" type="Sprite2D" parent="."]
+position = Vector2(304, 32)
+rotation = 3.14159
+texture = ExtResource("3_7agx0")
+flip_h = true
+
+[node name="Pipe4" type="Sprite2D" parent="."]
+position = Vector2(304, 512)
+texture = ExtResource("3_7agx0")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(202.5, 660.5)
+scale = Vector2(1.1994, 1.02679)
+texture = ExtResource("4_sjip8")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 388.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_vmxg7")
+text = "Flappy Bird"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 79.0
+offset_top = 399.0
+offset_right = 289.0
+offset_bottom = 476.0
+theme_override_colors/font_color = Color(0, 0.603922, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0.603922, 0.215686, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ex6u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_67kfu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2b7aj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w40om")
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 79.0
+offset_top = 490.0
+offset_right = 293.0
+offset_bottom = 567.0
+theme_override_colors/font_color = Color(0.211765, 0.411765, 0.980392, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.411765, 0.980392, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_buc06")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qxume")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e3kdn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cfks6")
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 584.0
+offset_right = 294.0
+offset_bottom = 661.0
+theme_override_colors/font_color = Color(0.886275, 0.0156863, 0, 1)
+theme_override_colors/font_focus_color = Color(0.886275, 0.0156863, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_buc06")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpucb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ew58m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sbls5")
+text = "Exit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

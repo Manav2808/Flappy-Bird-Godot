@@ -1,0 +1,222 @@
+[gd_scene load_steps=30 format=3 uid="uid://ccqnkylblm3m5"]
+
+[ext_resource type="Texture2D" uid="uid://cljfdgsn38xxc" path="res://Assets/sprites/background-day.png" id="1_qabmd"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_r6c21"]
+[ext_resource type="Texture2D" uid="uid://dx5jelorp4seb" path="res://Assets/sprites/background-night.png" id="2_htl3w"]
+[ext_resource type="Texture2D" uid="uid://cmg5dd53himfe" path="res://Assets/sprites/bluebird-downflap.png" id="3_wkfyn"]
+[ext_resource type="Texture2D" uid="uid://dti7cwe6qqkea" path="res://Assets/sprites/yellowbird-upflap.png" id="4_7s7bh"]
+[ext_resource type="Texture2D" uid="uid://bqhafkj51f6j4" path="res://Assets/sprites/bluebird-upflap.png" id="4_xrcl4"]
+[ext_resource type="Texture2D" uid="uid://bj1m13bup0me2" path="res://Assets/sprites/yellowbird-downflap.png" id="5_auuic"]
+[ext_resource type="Texture2D" uid="uid://bcim1abp3wntd" path="res://Assets/sprites/redbird-downflap.png" id="6_23vvx"]
+[ext_resource type="Texture2D" uid="uid://da6ibthvrrtyh" path="res://Assets/sprites/redbird-upflap.png" id="7_wc6ik"]
+[ext_resource type="Texture2D" uid="uid://3uq7mmidpt1k" path="res://Assets/sprites/pipe-green.png" id="9_wfebf"]
+[ext_resource type="Texture2D" uid="uid://btlb5uf7qpwtk" path="res://Assets/sprites/pipe-red.png" id="10_1get1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei3v1"]
+texture = ExtResource("1_qabmd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyk6c"]
+texture = ExtResource("1_qabmd")
+modulate_color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koavo"]
+texture = ExtResource("2_htl3w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40100"]
+texture = ExtResource("2_htl3w")
+modulate_color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dksj"]
+texture = ExtResource("3_wkfyn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77ecy"]
+texture = ExtResource("4_xrcl4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxs4p"]
+texture = ExtResource("5_auuic")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djhhn"]
+texture = ExtResource("4_7s7bh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1gocd"]
+texture = ExtResource("6_23vvx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ea8yd"]
+texture = ExtResource("7_wc6ik")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pf5f0"]
+texture = ExtResource("9_wfebf")
+modulate_color = Color(1, 1, 1, 0.784314)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr2ha"]
+texture = ExtResource("9_wfebf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x76g7"]
+texture = ExtResource("10_1get1")
+modulate_color = Color(1, 1, 1, 0.784314)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsvbt"]
+texture = ExtResource("10_1get1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbqfy"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4uoe"]
+bg_color = Color(0.027451, 0.027451, 0.027451, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvb8m"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvjld"]
+draw_center = false
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_r6c21")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(202, 359)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_qabmd")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 2.0
+offset_right = 373.0
+offset_bottom = 115.0
+theme_override_colors/font_shadow_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGTitle" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 137.0
+offset_right = 312.0
+offset_bottom = 195.0
+theme_override_colors/font_shadow_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_font_sizes/font_size = 40
+text = "Background"
+vertical_alignment = 1
+
+[node name="DayButton" type="Button" parent="."]
+offset_left = 83.0
+offset_top = 205.0
+offset_right = 185.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.819608, 0.819608, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei3v1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iyk6c")
+text = "Day"
+
+[node name="NightButton" type="Button" parent="."]
+offset_left = 195.0
+offset_top = 206.0
+offset_right = 313.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+theme_override_colors/font_hover_color = Color(0.843137, 0.843137, 0.843137, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_koavo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_40100")
+text = "Night"
+
+[node name="BirdTitle" type="Label" parent="."]
+offset_left = 87.0
+offset_top = 287.0
+offset_right = 310.0
+offset_bottom = 345.0
+theme_override_colors/font_shadow_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_font_sizes/font_size = 40
+text = "Bird"
+horizontal_alignment = 1
+
+[node name="BlueBirdButton" type="Button" parent="."]
+offset_left = 77.0
+offset_top = 353.0
+offset_right = 140.0
+offset_bottom = 401.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4dksj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_77ecy")
+
+[node name="YellowBirdButton" type="Button" parent="."]
+offset_left = 170.0
+offset_top = 353.0
+offset_right = 233.0
+offset_bottom = 401.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxs4p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_djhhn")
+
+[node name="YellowBirdButton2" type="Button" parent="."]
+offset_left = 258.0
+offset_top = 353.0
+offset_right = 321.0
+offset_bottom = 401.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_1gocd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ea8yd")
+
+[node name="PipesTitle" type="Label" parent="."]
+offset_left = 133.0
+offset_top = 418.0
+offset_right = 256.0
+offset_bottom = 476.0
+theme_override_colors/font_shadow_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_font_sizes/font_size = 40
+text = "Pipes"
+horizontal_alignment = 1
+
+[node name="GreenPipeButton" type="Button" parent="."]
+offset_left = 133.0
+offset_top = 495.0
+offset_right = 175.0
+offset_bottom = 639.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pf5f0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rr2ha")
+
+[node name="RedPipeButton" type="Button" parent="."]
+offset_left = 215.0
+offset_top = 495.0
+offset_right = 257.0
+offset_bottom = 639.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_x76g7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bsvbt")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 640.0
+offset_right = 113.0
+offset_bottom = 703.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_qbqfy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i4uoe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yvb8m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dvjld")
+text = "Back"
+
+[connection signal="pressed" from="DayButton" to="." method="_on_day_button_pressed"]
+[connection signal="pressed" from="NightButton" to="." method="_on_night_button_pressed"]
+[connection signal="pressed" from="BlueBirdButton" to="." method="_on_blue_bird_button_pressed"]
+[connection signal="pressed" from="YellowBirdButton" to="." method="_on_yellow_bird_button_pressed"]
+[connection signal="pressed" from="YellowBirdButton2" to="." method="_on_yellow_bird_button_2_pressed"]
+[connection signal="pressed" from="GreenPipeButton" to="." method="_on_green_pipe_button_pressed"]
+[connection signal="pressed" from="RedPipeButton" to="." method="_on_red_pipe_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

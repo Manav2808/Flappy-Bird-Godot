@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://brnul71yl0y2q"]
+
+[ext_resource type="Script" path="res://Scripts/Bird.gd" id="1_xw7m4"]
+[ext_resource type="Texture2D" uid="uid://dti7cwe6qqkea" path="res://Assets/sprites/yellowbird-upflap.png" id="2_6skck"]
+[ext_resource type="Texture2D" uid="uid://ede35kh2ythm" path="res://Assets/sprites/yellowbird-midflap.png" id="3_k0180"]
+[ext_resource type="Texture2D" uid="uid://bj1m13bup0me2" path="res://Assets/sprites/yellowbird-downflap.png" id="4_bpi7y"]
+[ext_resource type="AudioStream" uid="uid://cwf8m7m7diy8r" path="res://Assets/audio/wing.ogg" id="6_e33mx"]
+[ext_resource type="AudioStream" uid="uid://cl3b8t1c1uasp" path="res://Assets/audio/point.ogg" id="7_jf64b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvqil"]
+radius = 22.0
+height = 62.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1usw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6skck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bpi7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bpi7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6skck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6skck")
+}],
+"loop": false,
+"name": &"Fly Up",
+"speed": 18.0
+}]
+
+[node name="Bird" type="CharacterBody2D"]
+position = Vector2(53, 54)
+script = ExtResource("1_xw7m4")
+
+[node name="BirdCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-158, -166)
+build_mode = 1
+polygon = PackedVector2Array(152, 139, 176, 139, 176, 142, 180, 142, 180, 146, 184, 146, 185, 150, 188, 151, 188, 163, 192, 163, 192, 166, 196, 166, 196, 172, 192, 172, 192, 179, 188, 179, 188, 183, 168, 184, 168, 187, 148, 187, 148, 184, 140, 184, 140, 180, 135, 180, 135, 175, 132, 175, 132, 172, 128, 171, 128, 171, 128, 171, 128, 163, 131, 163, 131, 154, 135, 154, 135, 150, 139, 150, 139, 146, 143, 146, 143, 142, 152, 142)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tvqil")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -3)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_h1usw")
+animation = &"Fly Up"
+frame = 8
+frame_progress = 1.0
+speed_scale = 1.8
+
+[node name="FlapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_e33mx")
+
+[node name="ScoredSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jf64b")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

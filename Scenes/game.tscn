@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://2qn3o6o2odqt"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_0cnh1"]
+[ext_resource type="Texture2D" uid="uid://cljfdgsn38xxc" path="res://Assets/sprites/background-day.png" id="1_fdoii"]
+[ext_resource type="PackedScene" uid="uid://bn4r81v144oms" path="res://Scenes/pipes_green.tscn" id="3_djyn3"]
+[ext_resource type="PackedScene" uid="uid://3rjtvlpq638" path="res://Scenes/pipes_red.tscn" id="3_e2ga5"]
+[ext_resource type="PackedScene" uid="uid://brvt3ly54fu2a" path="res://Scenes/base.tscn" id="3_u3qd3"]
+[ext_resource type="PackedScene" uid="uid://d0wgdfv2mblcv" path="res://Scenes/blue_bird.tscn" id="4_kvt7q"]
+[ext_resource type="PackedScene" uid="uid://brnul71yl0y2q" path="res://Scenes/yellow_bird.tscn" id="5_cb6gj"]
+[ext_resource type="Script" path="res://Scripts/CurrentScore.gd" id="6_ki8br"]
+[ext_resource type="PackedScene" uid="uid://bydm5hwt8d5ev" path="res://Scenes/red_bird.tscn" id="6_o3x7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u28u"]
+size = Vector2(88, 113.25)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_0cnh1")
+PipeGreen = ExtResource("3_djyn3")
+PipeRed = ExtResource("3_e2ga5")
+BlueBird = ExtResource("4_kvt7q")
+YellowBird = ExtResource("5_cb6gj")
+RedBird = ExtResource("6_o3x7p")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 3
+position = Vector2(202, 358)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_fdoii")
+
+[node name="BaseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseArea"]
+position = Vector2(188, 660.375)
+shape = SubResource("RectangleShape2D_1u28u")
+
+[node name="Base" parent="." instance=ExtResource("3_u3qd3")]
+top_level = true
+texture_repeat = 2
+position = Vector2(0, 605)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3.36e+06, 112)
+
+[node name="CurrentScore" type="Label" parent="."]
+top_level = true
+offset_left = 129.0
+offset_top = 3.0
+offset_right = 275.0
+offset_bottom = 109.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+script = ExtResource("6_ki8br")
+metadata/_edit_use_anchors_ = true

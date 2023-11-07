@@ -1,0 +1,213 @@
+[gd_scene load_steps=19 format=3 uid="uid://bvllrm3dmh3eq"]
+
+[ext_resource type="Script" path="res://Scripts/mode_selection_screen.gd" id="1_cpj6l"]
+[ext_resource type="Texture2D" uid="uid://cljfdgsn38xxc" path="res://Assets/sprites/background-day.png" id="1_p8uaa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y2bs"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwf74"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.415686, 0.415686, 0.415686, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewesg"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i73m"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n7xh"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5ngk"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7avab"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dssj"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_md7co"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_784ip"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68w0f"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njkve"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yogvn"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcpj3"]
+bg_color = Color(0.027451, 0.027451, 0.027451, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwqp4"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.615686)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myi3y"]
+draw_center = false
+
+[node name="ModeSelectionScreen" type="Node2D"]
+script = ExtResource("1_cpj6l")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(202, 359)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_p8uaa")
+metadata/_edit_lock_ = true
+
+[node name="ChooseModeTitle" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 17.0
+offset_right = 361.0
+offset_bottom = 89.0
+theme_override_colors/font_shadow_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_font_sizes/font_size = 50
+text = "Choose Mode"
+horizontal_alignment = 1
+
+[node name="Classic" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 152.0
+offset_right = 344.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_0y2bs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mwf74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ewesg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1i73m")
+text = "Classic"
+
+[node name="Inverse Classic" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 232.0
+offset_right = 344.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_8n7xh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mwf74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ewesg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h5ngk")
+text = "Inverse Classic"
+
+[node name="InverseGravity" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 312.0
+offset_right = 343.0
+offset_bottom = 376.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_7avab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mwf74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ewesg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6dssj")
+text = "Inverse Gravity"
+
+[node name="Jupiter" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 392.0
+offset_right = 344.0
+offset_bottom = 456.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_md7co")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mwf74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ewesg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_784ip")
+text = "Jupiter"
+
+[node name="Debris" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 472.0
+offset_right = 344.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_68w0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mwf74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ewesg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_njkve")
+text = "Debris"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 640.0
+offset_right = 113.0
+offset_bottom = 703.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_yogvn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcpj3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kwqp4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_myi3y")
+text = "Back"
+
+[connection signal="pressed" from="Classic" to="." method="_on_classic_pressed"]
+[connection signal="pressed" from="Inverse Classic" to="." method="_on_inverse_classic_pressed"]
+[connection signal="pressed" from="InverseGravity" to="." method="_on_inverse_gravity_pressed"]
+[connection signal="pressed" from="Jupiter" to="." method="_on_jupiter_pressed"]
+[connection signal="pressed" from="Debris" to="." method="_on_debris_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

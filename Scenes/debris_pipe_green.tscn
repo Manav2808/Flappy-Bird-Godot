@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://exon14xmgpjd"]
+
+[ext_resource type="Texture2D" uid="uid://3uq7mmidpt1k" path="res://Assets/sprites/pipe-green.png" id="1_28d1d"]
+[ext_resource type="Script" path="res://Scripts/debris_pipe.gd" id="1_88qws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd8tu"]
+size = Vector2(43.5, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5ulj"]
+size = Vector2(48, 20)
+
+[node name="DebrisPipeGreen" type="Node2D"]
+scale = Vector2(1, 1.2)
+script = ExtResource("1_88qws")
+
+[node name="PipeImage" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_28d1d")
+
+[node name="BirdKillArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdKillArea"]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_yd8tu")
+
+[node name="BirdKillArea2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdKillArea2"]
+position = Vector2(0, -160)
+shape = SubResource("RectangleShape2D_k5ulj")

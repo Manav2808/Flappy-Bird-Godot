@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://sg8gdrv6og6p"]
+
+[ext_resource type="Script" path="res://Scripts/debris_mode.gd" id="1_hneo8"]
+[ext_resource type="Texture2D" uid="uid://cljfdgsn38xxc" path="res://Assets/sprites/background-day.png" id="1_locys"]
+[ext_resource type="PackedScene" uid="uid://brvt3ly54fu2a" path="res://Scenes/base.tscn" id="2_44fr5"]
+[ext_resource type="PackedScene" uid="uid://exon14xmgpjd" path="res://Scenes/debris_pipe_green.tscn" id="2_mdhtj"]
+[ext_resource type="PackedScene" uid="uid://bpboajkio2pel" path="res://Scenes/debris_pipe_red.tscn" id="3_8jop3"]
+[ext_resource type="PackedScene" uid="uid://d0wgdfv2mblcv" path="res://Scenes/blue_bird.tscn" id="4_wudml"]
+[ext_resource type="PackedScene" uid="uid://brnul71yl0y2q" path="res://Scenes/yellow_bird.tscn" id="5_hiep6"]
+[ext_resource type="PackedScene" uid="uid://bydm5hwt8d5ev" path="res://Scenes/red_bird.tscn" id="6_7afj0"]
+[ext_resource type="Script" path="res://Scripts/CurrentScore.gd" id="9_p0s8u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffxhn"]
+size = Vector2(88, 113.25)
+
+[node name="DebrisMode" type="Node2D"]
+script = ExtResource("1_hneo8")
+PipeGreen = ExtResource("2_mdhtj")
+PipeRed = ExtResource("3_8jop3")
+BlueBird = ExtResource("4_wudml")
+YellowBird = ExtResource("5_hiep6")
+RedBird = ExtResource("6_7afj0")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 3
+position = Vector2(202, 358)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_locys")
+
+[node name="CurrentScore" type="Label" parent="."]
+top_level = true
+offset_left = 132.0
+offset_top = 2.0
+offset_right = 260.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+script = ExtResource("9_p0s8u")
+
+[node name="BaseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseArea"]
+position = Vector2(104, 658)
+shape = SubResource("RectangleShape2D_ffxhn")
+
+[node name="Base" parent="." instance=ExtResource("2_44fr5")]
+top_level = true
+texture_repeat = 2
+position = Vector2(0, 605)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3.36e+06, 112)
+
+[node name="DebrisPipeGenerationTimer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[node name="ScoreCounter" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="DebrisPipeGenerationTimer" to="." method="_on_debris_pipe_generation_timer_timeout"]
+[connection signal="timeout" from="ScoreCounter" to="." method="_on_score_counter_timeout"]

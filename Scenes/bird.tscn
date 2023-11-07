@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://camnddgtfdmom"]
+
+[ext_resource type="Script" path="res://Scripts/Bird.gd" id="1_3sibw"]
+[ext_resource type="Texture2D" uid="uid://dvkxywhb2kivt" path="res://Assets/sprites/bluebird-midflap.png" id="2_s03fb"]
+[ext_resource type="Texture2D" uid="uid://bqhafkj51f6j4" path="res://Assets/sprites/bluebird-upflap.png" id="2_tpjir"]
+[ext_resource type="Texture2D" uid="uid://cmg5dd53himfe" path="res://Assets/sprites/bluebird-downflap.png" id="4_gm8ui"]
+[ext_resource type="AudioStream" uid="uid://c1xaxshxwpali" path="res://Assets/audio/die.ogg" id="5_ertg0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvqil"]
+radius = 22.0
+height = 62.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lks6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tpjir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s03fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s03fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gm8ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gm8ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s03fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s03fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tpjir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tpjir")
+}],
+"loop": false,
+"name": &"Fly Up",
+"speed": 18.0
+}]
+
+[node name="Bird" type="CharacterBody2D"]
+position = Vector2(53, 54)
+script = ExtResource("1_3sibw")
+
+[node name="BirdCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-158, -166)
+build_mode = 1
+polygon = PackedVector2Array(152, 139, 176, 139, 176, 142, 180, 142, 180, 146, 184, 146, 185, 150, 188, 151, 188, 163, 192, 163, 192, 166, 196, 166, 196, 172, 192, 172, 192, 179, 188, 179, 188, 183, 168, 184, 168, 187, 148, 187, 148, 184, 140, 184, 140, 180, 135, 180, 135, 175, 132, 175, 132, 172, 128, 171, 128, 171, 128, 171, 128, 163, 131, 163, 131, 154, 135, 154, 135, 150, 139, 150, 139, 146, 143, 146, 143, 142, 152, 142)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tvqil")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -3)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4lks6")
+animation = &"Fly Up"
+speed_scale = 1.8
+
+[node name="DieSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ertg0")
